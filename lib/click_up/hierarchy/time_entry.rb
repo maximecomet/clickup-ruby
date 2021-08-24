@@ -9,11 +9,11 @@ module ClickUp
         "/team/#{params[:team_id]}/time_entries"
       end
       def data(params={})
-        data={}
-        data[:assignee]=params[:assignee]
-        data[:start_date]=params[:start_date]
-        data[:end_date]=params[:end_date]
-        return data
+        d=Hash.new
+        d[:assignee]=params[:assignee]
+        d[:start_date]=params[:start_date]
+        d[:end_date]=params[:end_date]
+        return d
       end
     end
   end
