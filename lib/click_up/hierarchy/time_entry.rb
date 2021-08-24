@@ -6,7 +6,7 @@ module ClickUp
 
     class << self
       def index_path(params={})
-        "/team/#{params[:team_id]}/time_entries?#{params[:assignee]}&#{params[:start_date]}&#{params[:end_date]}"
+        "/team/#{params[:team_id]}/time_entries#{params[:assignee]}&#{params[:start_date]}&#{params[:end_date]}"
       end
     end
   end
