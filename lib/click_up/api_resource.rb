@@ -4,7 +4,6 @@ module ClickUp
   class APIResource
     class << self
       def execute_request(method, path, data={})
-        raise data.inspect
         client(path, data).send(method)
       end
 

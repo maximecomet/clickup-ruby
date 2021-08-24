@@ -6,14 +6,7 @@ module ClickUp
 
     class << self
       def index_path(params={})
-        "/team/#{params[:team_id]}/time_entries"
-      end
-      def data(params={})
-        d=Hash.new
-        d[:assignee]=params[:assignee]
-        d[:start_date]=params[:start_date]
-        d[:end_date]=params[:end_date]
-        return d
+        "/team/#{params[:team_id]}/time_entries?assignee=#{params[:assignee]}&start_date=#{params[:start_date]}&end_date=#{params[:end_date]}"
       end
     end
   end
