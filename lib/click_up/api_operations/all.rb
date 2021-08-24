@@ -4,7 +4,7 @@ module ClickUp
   module APIOperations
     module All
       def all(params={})
-        execute_request(:get, index_path(params))
+        execute_request(:get, index_path(params), data)
       end
     end
   end
