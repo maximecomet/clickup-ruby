@@ -10,7 +10,7 @@ module ClickUp
     end
 
     def get
-      raise path.inspect
+      raise resource_url.path.inspect
       net_http_response = https_client.request_get(resource_url.path, default_headers)
       format_response(net_http_response.body)
     end
