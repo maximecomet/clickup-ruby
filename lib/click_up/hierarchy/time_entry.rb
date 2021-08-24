@@ -9,7 +9,7 @@ module ClickUp
         "/team/#{params[:team_id]}/time_entries"
       end
       def data(params={})
-        "{assignee:#{params[:assignee]},start_date:#{params[:start_date]}, end_date:#{params[:end_date]}"
+        "{assignee:#{params[:assignee]},start_date:#{params[:start_date]}, end_date:#{params[:end_date]}}"
       end
     end
   end
