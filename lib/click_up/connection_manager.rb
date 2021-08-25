@@ -30,7 +30,7 @@ module ClickUp
     private
     def resource_url
       uri = URI("#{api_base}#{namespace}#{path}")
-      # uri.query = URI.encode_www_form(data) if data.size > 0
+      uri.query = URI.encode_www_form(data) if data.size > 0
       raise uri.inspect
       uri
     end
