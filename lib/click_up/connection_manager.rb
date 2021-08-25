@@ -12,7 +12,7 @@ module ClickUp
     def get
       # raise resource_url.path.inspect
       # raise path.inspect
-      net_http_response = https_client.request_get(resource_url.path, default_headers)
+      net_http_response = https_client.request_get(resource_url.to_s, default_headers)
       format_response(net_http_response.body)
     end
 
@@ -31,7 +31,6 @@ module ClickUp
     def resource_url
       uri = URI("#{api_base}#{namespace}#{path}")
       uri.query = URI.encode_www_form(data) if data.size > 0
-      raise uri.inspect
       uri
     end
 
