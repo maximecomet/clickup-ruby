@@ -10,20 +10,20 @@ module ClickUp
     class << self
       def index_path(params={})
         if params.has_key?(:folder_id)
-          folder_path(params[:folder_id])
+          folder_path(params[:folder_id], params)
         elsif params.has_key?(:space_id)
-          folderless_path(params[:space_id])
+          folderless_path(params[:space_id], params)
         else
           raise ArgumentError, "Either folder_id or space_id is required."
         end
       end
 
-      def folder_path(folder_id)
-        "/folder/#{folder_id}/list"
+      def folder_path(folder_id, params)
+        "/folder/#{folder_id}/list?#{formatted_params(params).to_query}"
       end
 
-      def folderless_path(space_id)
-        "/space/#{space_id}/list"
+      def folderless_path(space_id, params)
+        "/space/#{space_id}/list?#{formatted_params(params).to_query}"
       end
 
       def resource_path(params={})
