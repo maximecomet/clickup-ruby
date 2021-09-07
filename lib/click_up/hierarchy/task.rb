@@ -9,7 +9,7 @@ module ClickUp
 
     class << self
       def index_path(params={})
-        "/list/#{params[:list_id]}/task?#{params.to_query}"
+        "/list/#{params[:list_id]}/task?#{formatted_params(params).to_query}"
       end
 
       def resource_path(params={})
